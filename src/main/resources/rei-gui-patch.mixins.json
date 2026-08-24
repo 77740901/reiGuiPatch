@@ -1,0 +1,17 @@
+{
+    "required": true,
+    "package": "me.shedaniel.rei.guipatch.mixin",
+    "compatibilityLevel": "JAVA_21",
+    "client": [
+        "MixinGuiGraphics",
+        "MixinCraftableFilterButtonWidget",
+        "MixinToggleMenuEntry",
+        "MixinSubMenuEntry",
+        "MixinAbstractContainerScreen",
+        "MixinCreativeModeInventoryScreen",
+        "MixinGuiGraphicsExtractor"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}

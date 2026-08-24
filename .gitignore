@@ -1,0 +1,29 @@
+# Compiled output
+build/
+**/build/
+
+# Gradle
+.gradle/
+**/.gradle/
+gradle-user/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.classpath
+.project
+.settings/
+*.launch
+bin/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Runtime
+run/
+out/
+logs/

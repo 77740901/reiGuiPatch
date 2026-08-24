@@ -1,0 +1,20 @@
+{
+    "schemaVersion": 1,
+    "id": "rei-gui-patch",
+    "version": "${version}",
+    "name": "REI GUI Patch",
+    "description": "Fixes GUI rendering and interaction issues when using Roughly Enough Items (REI) on Minecraft 26.2",
+    "authors": ["REI-GUI-fix"],
+    "contact": {},
+    "license": "MIT",
+    "environment": "client",
+    "mixins": [
+        "rei-gui-patch.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=0.16.0",
+        "minecraft": "~26.2",
+        "java": ">=21",
+        "roughlyenoughitems": "*"
+    }
+}
