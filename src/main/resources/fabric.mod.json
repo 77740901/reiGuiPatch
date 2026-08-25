@@ -9,7 +9,8 @@
     "license": "MIT",
     "environment": "client",
     "mixins": [
-        "rei-gui-patch.mixins.json"
+        "rei-gui-patch.mixins.json",
+        "rei-gui-patch-compat.mixins.json"
     ],
     "depends": {
         "fabricloader": ">=0.16.0",

@@ -2,6 +2,7 @@ package me.shedaniel.rei.guipatch.mixin;
 
 import me.shedaniel.rei.guipatch.REIHelper;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.world.inventory.Slot;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -19,14 +20,14 @@ public abstract class MixinAbstractContainerScreen {
     }
 
     @Inject(method = "mouseClicked", at = @At("HEAD"), cancellable = true)
-    private void reiGuiPatch$cancelMouseClicked(CallbackInfoReturnable<Boolean> cir) {
+    private void reiGuiPatch$cancelMouseClicked(MouseButtonEvent event, boolean flag, CallbackInfoReturnable<Boolean> cir) {
         if (REIHelper.isMenuOpen()) {
             cir.setReturnValue(true);
         }
     }
 
     @Inject(method = "mouseReleased", at = @At("HEAD"), cancellable = true)
-    private void reiGuiPatch$cancelMouseReleased(CallbackInfoReturnable<Boolean> cir) {
+    private void reiGuiPatch$cancelMouseReleased(MouseButtonEvent event, CallbackInfoReturnable<Boolean> cir) {
         if (REIHelper.isMenuOpen()) {
             cir.setReturnValue(true);
         }

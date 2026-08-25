@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class MixinGuiGraphicsExtractor {
 
     @Inject(method = "setTooltipForNextFrameInternal", at = @At("HEAD"), cancellable = true)
-    private void reiGuiPatch$cancelTooltip(CallbackInfo ci) {
+    private void reiGuiPatch$cancelTooltipInternal(CallbackInfo ci) {
         if (REIHelper.isMenuOpen()) {
             ci.cancel();
         }

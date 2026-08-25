@@ -27,3 +27,6 @@ Thumbs.db
 run/
 out/
 logs/
+
+# Local dependencies
+libs/

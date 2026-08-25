@@ -26,6 +26,7 @@ dependencies {
     implementation "me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}"
     implementation "me.shedaniel.cloth:basic-math:0.6.1"
     compileOnly "me.shedaniel.cloth:cloth-config-fabric:26.2.155"
+    compileOnly fileTree(dir: 'libs', include: '*.jar')
 }
 
 processResources {
