@@ -13,6 +13,7 @@ A Fabric client-side mixin mod that fixes GUI rendering and interaction issues w
 | **Click-through** | Creative mode inventory tabs and slots can be clicked through the REI menu |
 | **Tooltip bleed** | Underlying screen tooltips (e.g. "Spawn Egg") leak through the REI menu |
 | **Missing menus** | Some REI menus do not render at all |
+| **IPN hotkey conflict** | Pressing 'A' in REI search opens IPN GUI editor instead of typing |
 | **Glitched arrow** | Removed the submenu arrow that had rendering artifacts |
 
 ## Requirements
