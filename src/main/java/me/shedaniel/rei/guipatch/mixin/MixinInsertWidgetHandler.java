@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(value = InsertWidgetHandler.class, remap = false)
+@Mixin(value = InsertWidgetHandler.class, remap = false, priority = 1001)
 public abstract class MixinInsertWidgetHandler {
 
     @Inject(method = "mouseClicked", at = @At("HEAD"), cancellable = true)
@@ -34,6 +34,27 @@ public abstract class MixinInsertWidgetHandler {
 
     @Inject(method = "mouseScrolled", at = @At("HEAD"), cancellable = true)
     private void reiGuiPatch$cancelIPNMouseScrolled(NativeInputContextBase<?> context, double mouseX, double mouseY, double scrollX, double scrollY, CallbackInfoReturnable<Boolean> cir) {
+        if (REIHelper.isMenuOpen()) {
+            cir.setReturnValue(false);
+        }
+    }
+
+    @Inject(method = "keyPressed", at = @At("HEAD"), cancellable = true)
+    private void reiGuiPatch$cancelIPNKeyPressed(NativeInputContextBase<?> context, int key, int scancode, int modifiers, CallbackInfoReturnable<Boolean> cir) {
+        if (REIHelper.isMenuOpen()) {
+            cir.setReturnValue(false);
+        }
+    }
+
+    @Inject(method = "keyReleased", at = @At("HEAD"), cancellable = true)
+    private void reiGuiPatch$cancelIPNKeyReleased(NativeInputContextBase<?> context, int key, int scancode, int modifiers, CallbackInfoReturnable<Boolean> cir) {
+        if (REIHelper.isMenuOpen()) {
+            cir.setReturnValue(false);
+        }
+    }
+
+    @Inject(method = "charTyped", at = @At("HEAD"), cancellable = true)
+    private void reiGuiPatch$cancelIPNCharTyped(NativeInputContextBase<?> context, char codePoint, int modifiers, CallbackInfoReturnable<Boolean> cir) {
         if (REIHelper.isMenuOpen()) {
             cir.setReturnValue(false);
         }

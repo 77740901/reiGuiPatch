@@ -40,7 +40,7 @@ public abstract class MixinGlobalScreenEventListener {
     }
 
     @Inject(method = "onMouseCursorPos", at = @At("HEAD"), cancellable = true)
-    private void reiGuiPatch$cancelMouseCursorPos(NativeInputContextBase<?> context, double mouseX, double mouseY, int cursorShape, double deltaX, double deltaY, boolean pre, CallbackInfoReturnable<Boolean> cir) {
+    private void reiGuiPatch$cancelMouseCursorPos(NativeInputContextBase<?> context, double mouseX, double mouseY, int cursorShape, double deltaX, boolean pre, CallbackInfoReturnable<Boolean> cir) {
         if (REIHelper.isMenuOpen()) {
             cir.setReturnValue(false);
         }
